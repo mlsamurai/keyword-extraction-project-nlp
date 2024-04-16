@@ -3,14 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Processed Result</title>
+    <title>Extraction Results</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f8f9fa; /* Light grey background */
+            font-family: 'Roboto', sans-serif; /* Simple and elegant font */
+        }
+        .container {
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            background-color: #fff; /* White background */
+            padding: 20px;
+            width: 90%; /* Increased width to make the container wider */
+            max-width: 1200px; /* Set a larger max width */
+        }
+        .header {
+            background-color: #007bff; /* Bootstrap primary blue */
+            color: #fff;
+            padding: 10px 15px;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            margin: -20px -20px 20px -20px;
+            text-align: center;
+        }
+        .success-message {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 16px;
+        }
+        .success-icon {
+            text-align: center;
+            font-size: 48px; /* Larger size for better visibility */
+            margin-bottom: 20px;
+        }
+        .keywords {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around; /* Adjusts columns to be centered with space around them */
+            margin-bottom: 20px;
+        }
+        .keyword {
+            flex: 0 1 50%; /* Take up half of the container width */
+            display: flex;
+            align-items: center; /* Align items vertically */
+            justify-content: flex-start; /* Align items to the left within their flex item */
+            padding-left: 10%; /* Adds padding to avoid sticking to the edge */
+            box-sizing: border-box; /* Includes padding in the width calculation */
+        }
+        .keyword-icon {
+            font-size: 16px; /* Slightly larger icon */
+            margin-right: 5px;
+        }
+        .btn-back {
+            width: 60%; /* Set the width of the Go Back button */
+            margin: 20px auto; /* Center the button */
+            display: block; /* Necessary to apply margin auto for centering */
+        }
+    </style>
 </head>
 <body>
-    <div class="container mt-5">
-        <h1>Processed Text</h1>
-        <p>{{ processed_text }}</p>
-        <a href="/" class="btn btn-primary">Go Back</a>
+    <div class="container">
+        <div class="header">
+            <h1>Keyword Extraction Results</h1>
+        </div>
+        <div class="success-icon">🎉</div>
+        <div class="success-message">Keywords successfully extracted! See results below:</div>
+        <div class="keywords">
+            {% for keyword in processed_text.split(' ') %}
+                <div class="keyword"><span class="keyword-icon">🔑</span>{{ keyword.capitalize() }}</div>
+            {% endfor %}
+        </div>
+        <a href="/" class="btn btn-primary btn-back">Go Back</a>
     </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.5/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
