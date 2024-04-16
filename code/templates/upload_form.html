@@ -3,22 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upload File</title>
+    <title>Keyword Extraction</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f8f9fa; /* Light grey background */
+            font-family: 'Roboto', sans-serif; /* Simple and elegant font */
+        }
+        .container {
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            background-color: #fff; /* White background for the form */
+            padding: 20px;
+            width: 80%; /* Increase the width of the form */
+            max-width: 800px; /* Set a max width for very large displays */
+        }
+        .header {
+            background-color: #007bff; /* Bootstrap primary blue */
+            color: #fff;
+            padding: 10px 15px;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            margin: -20px -20px 20px -20px;
+            text-align: center;
+        }
+        .description {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #007bff; /* Matching the header blue */
+            text-align: center;
+            font-weight: normal; /* Less bold */
+        }
+        .separator {
+            height: 2px;
+            background-color: #007bff; /* Blue line */
+            width: 60%; /* Width matching the button */
+            margin: 10px auto 20px; /* Centered horizontally */
+        }
+        .form-file {
+            position: relative;
+            overflow: hidden;
+            width: 60%; /* Set the width of the file and submit button elements */
+            margin: 20px auto 30px; /* Center the elements and add space below */
+        }
+        .form-file input[type=file] {
+            position: absolute;
+            top: 0;
+            right: 0;
+            min-width: 100%;
+            min-height: 100%;
+            font-size: 100px;
+            text-align: right;
+            filter: alpha(opacity=0);
+            opacity: 0;
+            outline: none;
+            background: white;
+            cursor: inherit;
+            display: block;
+        }
+        .btn-file {
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            width: 100%; /* Make the button expand to fill the form-file */
+            padding: 0.5em 0; /* Adjust to center text vertically */
+            background-color: #007bff;
+            color: white;
+            border: none;
+        }
+        .form-control {
+            width: 80%; /* Making the text input form wider */
+            margin: 0 auto 30px auto; /* Center the element and add space below */
+        }
+        .btn-submit {
+            width: 60%; /* Set the width of the submit button */
+            margin: 10px auto 30px auto; /* Center the elements and add space below */
+        }
+        .link-group {
+            display: flex;
+            justify-content: flex-end; /* Align the links to the right */
+            align-items: center; /* Keep the links aligned on the same baseline */
+            margin-top: 20px; /* Space above the link group */
+        }
+        .blog-link, .github-link {
+            font-size: 0.9rem; /* Ensure consistent font size */
+            margin-right: 20px; /* Ensure there's some space to the right of each link, if needed */
+        }
+        .github-link {
+            margin-left: 32px; /* Specific space between the links */
+        }
+        .italics {
+            font-style: italic;
+            text-align: center;
+            color: #007bff;
+        }
+    </style>
 </head>
 <body>
-    <div class="container mt-5">
-        <h1 class="mb-3">Upload a file or paste text</h1>
-        <form method="post" enctype="multipart/form-data" class="mb-3">
-            <div class="form-group">
-                <label for="file">File input</label>
-                <input type="file" class="form-control-file" id="file" name="file">
+    <div class="container">
+        <div class="header">
+            <h1>Keyword Extraction</h1>
+        </div>
+        <p class="description">
+            This application extracts key phrases from the text or the documents you upload. Simply paste your text in the
+            textarea below or upload a document to begin the extraction process.
+        </p>
+        <h2>Upload a file or paste text</h2>
+        <div class="separator"></div>
+        <form method="post" enctype="multipart/form-data">
+            <div class="form-group form-file">
+                <button type="button" class="btn btn-primary btn-file">Choose File <input type="file" id="file" name="file" onchange="document.getElementById('file-name').textContent = this.files[0].name"></button>
+                <span id="file-name"></span>
             </div>
+            <p class="italics">...or use a text input</p>
             <div class="form-group">
-                <label for="text">Text input</label>
                 <textarea class="form-control" id="text" name="text" rows="3"></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <div class="form-group btn-submit">
+                <button type="submit" class="btn btn-primary btn-block">Submit</button>
+            </div>
+            <div class="link-group">
+                <a href="https://yourblog.com" class="blog-link">&#x2764;&#xFE0F; Visit My Blog</a>
+                <a href="https://github.com/yourusername" the="github-link">&#x1F517; Visit My GitHub</a>
+            </div>
         </form>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
