@@ -38,9 +38,9 @@ To set up this project locally, follow these steps:
    python app.py
    ``` 
 
-This will start the server locally on http://127.0.0.1:5000/.
+    This will start the server locally on http://127.0.0.1:5000/.
 
-2. **Access the Web Interface**
+2. **Access the Web Interface** \
    Open a web browser and go to http://127.0.0.1:5000/ to start using the application.
 
 ## Tutorials
