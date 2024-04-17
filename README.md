@@ -1,6 +1,8 @@
 # Keyword Extraction Web App 
 
-![Example Image](images/app.png)
+<div align="center">
+    <img src="images/example.png" alt="Example Image">
+</div>
 
 ## Project Description
 This project features a Flask-based web application designed for extracting keywords from uploaded text documents (PDF, DOCX, TXT) or direct text inputs. Utilizing the KeyBERT model, the app offers an intuitive interface for users to interact with advanced NLP keyword extraction technologies easily.
