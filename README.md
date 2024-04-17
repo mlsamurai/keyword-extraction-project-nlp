@@ -1,5 +1,9 @@
 # Keyword Extraction Web App 
 
+<div align="center">
+    <img src="images/app.png" alt="App Image">
+</div>
+
 ## Project Description
 This project features a Flask-based web application designed for extracting keywords from uploaded text documents (PDF, DOCX, TXT) or direct text inputs. Utilizing the KeyBERT model, the app offers an intuitive interface for users to interact with advanced NLP keyword extraction technologies easily.
 
@@ -28,16 +32,16 @@ To set up this project locally, follow these steps:
 
 ## How to Run
 
-**Start the Flask App**
-From the code directory, execute:
-```bash
-python app.py
-``` 
+1. **Start the Flask App**
+   From the code directory, execute:
+   ```bash
+   python app.py
+   ``` 
 
-This will start the server locally on http://127.0.0.1:5000/.
+    This will start the server locally on http://127.0.0.1:5000/.
 
-**Access the Web Interface**
-Open a web browser and go to http://127.0.0.1:5000/ to start using the application.
+2. **Access the Web Interface** \
+   Open a web browser and go to http://127.0.0.1:5000/ to start using the application.
 
 ## Tutorials
 
