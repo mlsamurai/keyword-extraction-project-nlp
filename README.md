@@ -1,7 +1,7 @@
 # Keyword Extraction Web App 
 
 <div align="center">
-    <img src="images/example.png" alt="Example Image">
+    <img src="images/app.png" alt="App Image">
 </div>
 
 ## Project Description
