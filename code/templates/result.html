@@ -42,28 +42,40 @@
             font-size: 48px; /* Larger size for better visibility */
             margin-bottom: 20px;
         }
-        .keywords {
+                .keywords {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-around; /* Adjusts columns to be centered with space around them */
-            margin-bottom: 20px;
+            justify-content: center; /* Centers the keywords container */
+            margin-bottom: 10px; /* Reduced bottom margin */
         }
+
         .keyword {
-            flex: 0 1 50%; /* Take up half of the container width */
+            flex: 0 0 45%; /* Maintains width at 45% for each keyword block */
             display: flex;
-            align-items: center; /* Align items vertically */
-            justify-content: flex-start; /* Align items to the left within their flex item */
-            padding-left: 10%; /* Adds padding to avoid sticking to the edge */
-            box-sizing: border-box; /* Includes padding in the width calculation */
+            align-items: center;
+            justify-content: flex-end; /* Right-aligns the left column */
+            margin: 5px 1%; /* Reduces vertical spacing between keywords */
+            padding-right: 20px; /* Right padding for the left column */
         }
-        .keyword-icon {
-            font-size: 16px; /* Slightly larger icon */
-            margin-right: 5px;
+
+        .keyword:nth-child(odd) {
+            justify-content: flex-end;
         }
+
+        .keyword:nth-child(even) {
+            justify-content: flex-start; /* Left-aligns the right column */
+            padding-left: 20px; /* Left padding for the right column */
+        }
+
+        .related-links {
+            text-align: center;
+            margin-top: 20px;
+        }
+
         .btn-back {
-            width: 60%; /* Set the width of the Go Back button */
-            margin: 20px auto; /* Center the button */
-            display: block; /* Necessary to apply margin auto for centering */
+            width: 60%; /* Width of Go Back button */
+            margin: 20px auto; /* Centers the button */
+            display: block;
         }
     </style>
 </head>
@@ -76,8 +88,13 @@
         <div class="success-message">Keywords successfully extracted! See results below:</div>
         <div class="keywords">
             {% for keyword in processed_text.split(' ') %}
-                <div class="keyword"><span class="keyword-icon">🔑</span>{{ keyword.capitalize() }}</div>
+                <div class="keyword"><span>{{ keyword.capitalize() }}<span class="keyword-icon">🔑</span></span></div>
             {% endfor %}
+        </div>
+        <div class="related-links">
+            <a href="https://maartengr.github.io/KeyBERT/" target="_blank">Learn more about KeyBERT</a><br>
+            <a href="https://arxiv.org/abs/YOUR_ARXIV_ID_1" target="_blank">ArXiv Article on Keyword Extraction with KeyBERT 1</a><br>
+            <a href="https://arxiv.org/abs/YOUR_ARXIV_ID_2" target="_blank">ArXiv Article on Keyword Extraction with KeyBERT 2</a>
         </div>
         <a href="/" class="btn btn-primary btn-back">Go Back</a>
     </div>
