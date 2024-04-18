@@ -5,7 +5,12 @@
 </div>
 
 ## Project Description
-This project features a Flask-based web application designed for extracting keywords from uploaded text documents (PDF, DOCX, TXT) or direct text inputs. Utilizing the KeyBERT model, the app offers an intuitive interface for users to interact with advanced NLP keyword extraction technologies easily.
+This tutorial application extracts keywords from a document or user-suggested text. 
+
+You will learn how to: 
+- create applications in Flask
+- extract text from pdf, doc, txt files
+- use keyBert to extract keywords
 
 The project structure includes:
 - A `code` directory containing the Flask application.
